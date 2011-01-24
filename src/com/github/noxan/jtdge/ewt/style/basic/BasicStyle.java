@@ -18,7 +18,7 @@ public class BasicStyle implements Style {
 	
 	@Override
 	public BasicComponentView getView(EComponent c) {
-		final String packageString = "com.beanstalkapp.noxan.jtdge.ewt.style.basic.Basic";
+		final String packageString = "com.github.noxan.jtdge.ewt.style.basic.Basic";
 		ClassLoader loader = c.getClass().getClassLoader();
 		try {
 			Class<?> ext = loader.loadClass(packageString+c.getViewID());

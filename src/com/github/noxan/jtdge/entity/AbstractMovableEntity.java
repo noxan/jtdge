@@ -21,6 +21,15 @@ public abstract class AbstractMovableEntity<E extends Engine> extends AbstractEn
 	 */
 	private float dy;
 	
+	
+	public AbstractMovableEntity(float x, float y) {
+		this(x, y, 0.0f, 0.0f);
+	}
+	public AbstractMovableEntity(float x, float y, float dx, float dy) {
+		super(x, y);
+		setSpeedX(dx);
+		setSpeedY(dy);
+	}
 	public AbstractMovableEntity(Appearance appearance, float x, float y) {
 		this(appearance, x, y, 0.0f, 0.0f);
 	}

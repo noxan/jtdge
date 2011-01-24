@@ -42,8 +42,7 @@ public class BasicButtonView extends BasicComponentView {
 			}
 		}
 		
-		paintButton(g2, button.getX(), button.getY(), button.getWidth(), button.getHeight(), button.getText(), 
-				EWTManager.getStyle().getFont(), fg, bg);
+		paintButton(g2, button.getX(), button.getY(), button.getWidth(), button.getHeight(), button.getText(), EWTManager.getStyle().getFont(), fg, bg);
 		
 		
 		g2.setColor(color);
@@ -57,9 +56,13 @@ public class BasicButtonView extends BasicComponentView {
 		g2.fillRect(x, y, width, height);
 		g2.setColor(bg.brighter());
 		g2.drawRect(x, y, width-1, height-1);
-		TextLayout layout = new TextLayout(text, font, g2.getFontRenderContext());
-		double twidth = layout.getBounds().getWidth();
-		double theight = layout.getBounds().getHeight();
+		double twidth = 0.d;
+		double theight = 0.d;
+		if(!text.isEmpty()) {
+			TextLayout layout = new TextLayout(text, font, g2.getFontRenderContext());
+			twidth = layout.getBounds().getWidth();
+			theight = layout.getBounds().getHeight();
+		}
 		g2.setColor(fg);
 		g2.setFont(font);
 		/*if(twidth>=width && theight>=height) {
