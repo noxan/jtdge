@@ -1,1 +1,3 @@
-# Java Two Dimensional Game Engine (jtdge)
+# jtdge
+
+Java Two Dimensional Game Engine
